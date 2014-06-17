@@ -1,24 +1,24 @@
 {
     "server": {
-        "accessLog": "<%=hipache['log_path']%>",
-        "workers": <%=hipache['workers']%>,
-        "maxSockets": <%=hipache['max_sockets']%>,
-        "deadBackendTTL": <%=hipache['dead_backend_ttl']%>,
+        "accessLog": "<%=@hipache['log_path']%>",
+        "workers": <%=@hipache['workers']%>,
+        "maxSockets": <%=@hipache['max_sockets']%>,
+        "deadBackendTTL": <%=@hipache['dead_backend_ttl']%>,
     },
     "http": {
         "port": 80,
         "bind": ["0.0.0.0"],
     },
-<% if hipache['ssl_enabled'] %>
+<% if @hipache['ssl_enabled'] %>
     "https": {
         "port": 443,
         "bind": ["0.0.0.0"]
-        "key": "<%=hipache['ssl_certificate_key']%>",
-        "cert": "<%=hipache['ssl_certificate_crt']%>"
+        "key": "<%=@hipache['ssl_certificate_key']%>",
+        "cert": "<%=@hipache['ssl_certificate_crt']%>"
     },
 <% end %>
-<% if hipache['redis'] %>
-    "redisHost": "<%=hipache['redis_host']%>",
-    "redisPort": "<%=hipache['redis_port']%>"
+<% if @hipache['redis'] %>
+    "redisHost": "<%=@hipache['redis_host']%>",
+    "redisPort": "<%=@hipache['redis_port']%>"
 <% end %>
 }
