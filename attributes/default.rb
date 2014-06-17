@@ -15,8 +15,6 @@ default['hipache']['ssl_enabled'] = false
 default['hipache']['ssl_certificate_crt'] = nil
 default['hipache']['ssl_certificate_key'] = nil
 
-default['hipache']['redis'] = true
-default['hipache']['redis_host'] = 'localhost'
-default['hipache']['redis_port'] = '6379'
+default['hipache']['driver'] = 'redis://127.0.0.1:6379'
 
 
